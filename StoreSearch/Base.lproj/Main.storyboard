@@ -34,13 +34,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Wij-28-Imu"/>
                                 </connections>
                             </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmq-F9-DSX">
+                                <rect key="frame" x="0.0" y="76" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="gWX-Z0-GWe">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="3bD-rz-Adj">
+                                            <rect key="frame" x="10" y="7" width="300" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-books"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segementChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dij-Vk-Kj2"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vfJ-Sp-Dhr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7jO-53-fFs"/>
+                            <constraint firstItem="mmq-F9-DSX" firstAttribute="top" secondItem="vfJ-Sp-Dhr" secondAttribute="bottom" id="96O-29-iqu"/>
+                            <constraint firstItem="mmq-F9-DSX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9zD-q0-gxj"/>
                             <constraint firstItem="5pU-Jf-fw4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="B5t-F2-L1n"/>
                             <constraint firstItem="5pU-Jf-fw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DOS-YQ-W9p"/>
                             <constraint firstItem="5pU-Jf-fw4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QQp-op-fIw"/>
+                            <constraint firstItem="mmq-F9-DSX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YNd-SP-vnJ"/>
                             <constraint firstItem="5pU-Jf-fw4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eas-SX-qba"/>
                             <constraint firstItem="vfJ-Sp-Dhr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pv1-pt-UFc"/>
                             <constraint firstItem="vfJ-Sp-Dhr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u2h-pn-vpL"/>
@@ -49,6 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="vfJ-Sp-Dhr" id="7is-ff-ev2"/>
+                        <outlet property="segmentedControl" destination="3bD-rz-Adj" id="0ga-9M-qv8"/>
                         <outlet property="tableView" destination="5pU-Jf-fw4" id="Ova-kA-nKl"/>
                     </connections>
                 </viewController>
