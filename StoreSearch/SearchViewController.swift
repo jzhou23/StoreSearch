@@ -57,6 +57,15 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK:- Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            let indexPath = sender as! IndexPath
+            detailViewController.searchResult = searchResults[indexPath.row]
+        }
+    }
+    
     // MARK:- Private Methods
     func iTunesURL(searchText: String, category: Int) -> URL {
         let kind: String
@@ -199,6 +208,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     // simply deselect the row with an animation
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
     }
     
     // makes sure that you can only select rows when you have actual search results
@@ -208,6 +218,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return indexPath
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
