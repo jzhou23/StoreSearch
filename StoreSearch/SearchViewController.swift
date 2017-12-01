@@ -95,21 +95,37 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
             
-            let queue = DispatchQueue.global()
-            
             let url = self.iTunesURL(searchText: searchBar.text!)
-            queue.async {
-                print("URL: '\(url)'")
-                if let data = self.performStoreRequest(with: url) {
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort(by: <)
-                    DispatchQueue.main.async {
-                        self.isLoading = false
-                        self.tableView.reloadData()
+            let session = URLSession.shared
+            
+            let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if let error = error {
+                    print("Failure! \(error)")
+                } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                    // parse JSON
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        self.searchResults.sort(by: <)
+                        DispatchQueue.main.async {
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                            print("On main thread? " + (Thread.current.isMainThread ? "Yes" : "No"))
+                        }
+                        return
                     }
-                    return
+                } else {
+                    print("Failure! \(response!)")
                 }
-            }
+                
+                DispatchQueue.main.async {
+                    self.hasSearched = false
+                    self.isLoading = false
+                    self.tableView.reloadData()
+                    self.showNetworkError()
+                }
+            })
+            
+            dataTask.resume()
 //            isLoading = false
 //            tableView.reloadData()
         }
