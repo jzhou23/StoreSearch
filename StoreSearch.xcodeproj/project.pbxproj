@@ -16,7 +16,7 @@
 		C65005F41FD0A65B00EFD321 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65005F31FD0A65B00EFD321 /* SearchResultCell.swift */; };
 		C65005F61FD0A93400EFD321 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65005F51FD0A93400EFD321 /* NothingFoundCell.xib */; };
 		C6592EF01FD1054D00D3C354 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6592EEF1FD1054D00D3C354 /* LoadingCell.xib */; };
-		C6CC23491FD1B35E0010579C /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC23481FD1B35E0010579C /* UIImageView+DownloadImage.swift */; };
+		C66366CE1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66366CD1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		C65005F31FD0A65B00EFD321 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		C65005F51FD0A93400EFD321 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		C6592EEF1FD1054D00D3C354 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
-		C6CC23481FD1B35E0010579C /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
+		C66366CD1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				C65005F31FD0A65B00EFD321 /* SearchResultCell.swift */,
 				C65005F51FD0A93400EFD321 /* NothingFoundCell.xib */,
 				C6592EEF1FD1054D00D3C354 /* LoadingCell.xib */,
-				C6CC23481FD1B35E0010579C /* UIImageView+DownloadImage.swift */,
+				C66366CD1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 				C65005F01FD06E7E00EFD321 /* SearchResult.swift in Sources */,
 				C65005F41FD0A65B00EFD321 /* SearchResultCell.swift in Sources */,
 				C65005DE1FD0635F00EFD321 /* AppDelegate.swift in Sources */,
-				C6CC23491FD1B35E0010579C /* UIImageView+DownloadImage.swift in Sources */,
+				C66366CE1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
