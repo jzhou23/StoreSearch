@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C622E7581FD268ED00CFCCDF /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */; };
+		C622E75A1FD26BBC00CFCCDF /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */; };
 		C65005DE1FD0635F00EFD321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65005DD1FD0635F00EFD321 /* AppDelegate.swift */; };
 		C65005E01FD0635F00EFD321 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65005DF1FD0635F00EFD321 /* SearchViewController.swift */; };
 		C65005E31FD0635F00EFD321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65005E11FD0635F00EFD321 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandscapeViewController.swift; path = ../LandscapeViewController.swift; sourceTree = "<group>"; };
+		C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
 		C65005DA1FD0635F00EFD321 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65005DD1FD0635F00EFD321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65005DF1FD0635F00EFD321 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		C65005DC1FD0635F00EFD321 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */,
 				C65005DD1FD0635F00EFD321 /* AppDelegate.swift */,
 				C65005DF1FD0635F00EFD321 /* SearchViewController.swift */,
 				C65005E11FD0635F00EFD321 /* Main.storyboard */,
@@ -90,6 +95,7 @@
 				C66366D31FD1EF87004D7C09 /* GradientView.swift */,
 				C66366D51FD20309004D7C09 /* BounceAnimationController.swift */,
 				C66366D71FD209D8004D7C09 /* SlideOutAnimationController.swift */,
+				C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -170,9 +176,11 @@
 			files = (
 				C65005E01FD0635F00EFD321 /* SearchViewController.swift in Sources */,
 				C66366D21FD1BD9A004D7C09 /* DimmingPresentationController.swift in Sources */,
+				C622E75A1FD26BBC00CFCCDF /* FadeOutAnimationController.swift in Sources */,
 				C65005F01FD06E7E00EFD321 /* SearchResult.swift in Sources */,
 				C65005F41FD0A65B00EFD321 /* SearchResultCell.swift in Sources */,
 				C66366D61FD20309004D7C09 /* BounceAnimationController.swift in Sources */,
+				C622E7581FD268ED00CFCCDF /* LandscapeViewController.swift in Sources */,
 				C66366D01FD1BA4B004D7C09 /* DetailViewController.swift in Sources */,
 				C65005DE1FD0635F00EFD321 /* AppDelegate.swift in Sources */,
 				C66366D41FD1EF87004D7C09 /* GradientView.swift in Sources */,

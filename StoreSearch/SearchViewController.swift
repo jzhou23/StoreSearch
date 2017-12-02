@@ -32,6 +32,7 @@ class SearchViewController: UIViewController {
     var isLoading = false
     
     var dataTask: URLSessionDataTask?
+    var landscapeVC: LandscapeViewController?
     
     // MARK: - inbuilt methods
     override func viewDidLoad() {
@@ -63,6 +64,16 @@ class SearchViewController: UIViewController {
             let detailViewController = segue.destination as! DetailViewController
             let indexPath = sender as! IndexPath
             detailViewController.searchResult = searchResults[indexPath.row]
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        switch newCollection.verticalSizeClass {
+        case .compact:
+            showLandscape(with: coordinator)
+        case .regular, .unspecified:
+            hideLandscape(with: coordinator)
         }
     }
     
@@ -158,6 +169,48 @@ class SearchViewController: UIViewController {
             dataTask?.resume()
             //            isLoading = false
             //            tableView.reloadData()
+        }
+    }
+    
+    func showLandscape(with coordinator: UIViewControllerTransitionCoordinator) {
+        guard landscapeVC == nil else {
+            return
+        }
+        
+        landscapeVC = storyboard!.instantiateViewController(withIdentifier: "LandscapeViewController") as? LandscapeViewController
+        
+        if let controller = landscapeVC {
+            controller.view.frame = view.bounds
+            controller.view.alpha = 0
+            
+            view.addSubview(controller.view)
+            addChildViewController(controller)
+            coordinator.animate(alongsideTransition: { _ in
+                controller.view.alpha = 1
+                // hiding the keyboard also happens with an animation
+                self.searchBar.resignFirstResponder()
+                
+                // returns a reference to the current modal view controller
+                if self.presentedViewController != nil {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }, completion: { _ in
+                controller.didMove(toParentViewController: self)
+            })
+        }
+    }
+    
+    func hideLandscape(with coordiinator: UIViewControllerTransitionCoordinator) {
+        if let controller = landscapeVC {
+            controller.willMove(toParentViewController: nil)
+            
+            coordiinator.animate(alongsideTransition: { _ in
+                controller.view.alpha = 0
+            }, completion: { _ in
+                controller.view.removeFromSuperview()
+                controller.removeFromParentViewController()
+                self.landscapeVC = nil
+            })
         }
     }
 }
