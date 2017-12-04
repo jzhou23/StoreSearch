@@ -17,6 +17,7 @@
 		C65005F21FD0A03E00EFD321 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65005F11FD0A03E00EFD321 /* SearchResultCell.xib */; };
 		C65005F41FD0A65B00EFD321 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65005F31FD0A65B00EFD321 /* SearchResultCell.swift */; };
 		C65005F61FD0A93400EFD321 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C65005F51FD0A93400EFD321 /* NothingFoundCell.xib */; };
+		C657EEE01FD5ED6700C10EE5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C657EEDF1FD5ED6700C10EE5 /* Search.swift */; };
 		C6592EF01FD1054D00D3C354 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6592EEF1FD1054D00D3C354 /* LoadingCell.xib */; };
 		C66366CE1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66366CD1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift */; };
 		C66366D01FD1BA4B004D7C09 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66366CF1FD1BA4B004D7C09 /* DetailViewController.swift */; };
@@ -39,6 +40,7 @@
 		C65005F11FD0A03E00EFD321 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		C65005F31FD0A65B00EFD321 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		C65005F51FD0A93400EFD321 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		C657EEDF1FD5ED6700C10EE5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		C6592EEF1FD1054D00D3C354 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		C66366CD1FD1B64A004D7C09 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		C66366CF1FD1BA4B004D7C09 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C66366D51FD20309004D7C09 /* BounceAnimationController.swift */,
 				C66366D71FD209D8004D7C09 /* SlideOutAnimationController.swift */,
 				C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */,
+				C657EEDF1FD5ED6700C10EE5 /* Search.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C657EEE01FD5ED6700C10EE5 /* Search.swift in Sources */,
 				C65005E01FD0635F00EFD321 /* SearchViewController.swift in Sources */,
 				C66366D21FD1BD9A004D7C09 /* DimmingPresentationController.swift in Sources */,
 				C622E75A1FD26BBC00CFCCDF /* FadeOutAnimationController.swift in Sources */,
