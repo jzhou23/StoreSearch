@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6096A681FD7198100EF41B0 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6096A671FD7198100EF41B0 /* MenuViewController.swift */; };
 		C622E7581FD268ED00CFCCDF /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */; };
 		C622E75A1FD26BBC00CFCCDF /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */; };
 		C65005DE1FD0635F00EFD321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65005DD1FD0635F00EFD321 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6096A671FD7198100EF41B0 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LandscapeViewController.swift; path = ../LandscapeViewController.swift; sourceTree = "<group>"; };
 		C622E7591FD26BBC00CFCCDF /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
 		C65005DA1FD0635F00EFD321 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 		C65005DC1FD0635F00EFD321 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
+				C6096A671FD7198100EF41B0 /* MenuViewController.swift */,
 				C622E7571FD268ED00CFCCDF /* LandscapeViewController.swift */,
 				C65005DD1FD0635F00EFD321 /* AppDelegate.swift */,
 				C65005DF1FD0635F00EFD321 /* SearchViewController.swift */,
@@ -195,6 +198,7 @@
 				C657EEE01FD5ED6700C10EE5 /* Search.swift in Sources */,
 				C65005E01FD0635F00EFD321 /* SearchViewController.swift in Sources */,
 				C66366D21FD1BD9A004D7C09 /* DimmingPresentationController.swift in Sources */,
+				C6096A681FD7198100EF41B0 /* MenuViewController.swift in Sources */,
 				C622E75A1FD26BBC00CFCCDF /* FadeOutAnimationController.swift in Sources */,
 				C65005F01FD06E7E00EFD321 /* SearchResult.swift in Sources */,
 				C65005F41FD0A65B00EFD321 /* SearchResultCell.swift in Sources */,

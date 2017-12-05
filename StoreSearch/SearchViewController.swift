@@ -29,6 +29,7 @@ class SearchViewController: UIViewController {
     // MARK: - instant variables
     private let search = Search()
     var landscapeVC: LandscapeViewController?
+    weak var splitViewDetail: DetailViewController?
     
     // MARK: - inbuilt methods
     override func viewDidLoad() {
@@ -46,7 +47,11 @@ class SearchViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
         
         tableView.rowHeight = 80
-        searchBar.becomeFirstResponder()
+        title = NSLocalizedString("Search", comment: "split view master button")
+        
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            searchBar.becomeFirstResponder()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +66,7 @@ class SearchViewController: UIViewController {
                 let detailViewController = segue.destination as! DetailViewController
                 let indexPath = sender as! IndexPath
                 detailViewController.searchResult = list[indexPath.row]
+                detailViewController.isPopUp = true
             }
         }
     }
@@ -75,9 +81,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    // MARK:- Private Methods
-    
-    
+    // MARK:- Public Methods
     func performStoreRequest(with url: URL) -> Data? {
         do {
             return try Data(contentsOf: url)
@@ -156,6 +160,15 @@ class SearchViewController: UIViewController {
             })
         }
     }
+    
+    // MARK:- Private Methods
+    private func hideMasterPane() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.splitViewController!.preferredDisplayMode = .primaryHidden
+        }) { _ in
+            self.splitViewController!.preferredDisplayMode = .automatic
+        }
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -207,8 +220,21 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     // simply deselect the row with an animation
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
+        searchBar.resignFirstResponder()
+        
+        if view.window!.rootViewController!.traitCollection.horizontalSizeClass == .compact {
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "ShowDetail", sender: indexPath)
+        } else {
+            if case .results(let list) = search.state {
+                splitViewDetail?.searchResult = list[indexPath.row]
+                if splitViewController!.displayMode != .allVisible {
+                    hideMasterPane()
+                }
+            }
+        }
     }
     
     // makes sure that you can only select rows when you have actual search results
